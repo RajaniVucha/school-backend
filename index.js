@@ -30,8 +30,6 @@ app.get("/", (req, res) => {
 });
 // Start the server
 app.listen(port, () => {
-  res.send("hello node");
-
   console.log(`Server is running on port ${port}`);
 });
 
@@ -51,6 +49,5 @@ mongoose.connect(
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 db.once("open", () => {
-  res.send("connected to Mongo");
   console.log("Connected to MongoDB");
 });
