@@ -49,5 +49,6 @@ mongoose.connect(
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 db.once("open", () => {
+  res.send("connected to Mongo");
   console.log("Connected to MongoDB");
 });
