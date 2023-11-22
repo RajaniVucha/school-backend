@@ -8,7 +8,7 @@ const bodyParser = require("body-parser");
 const port = process.env.PORT || 3000;
 
 // Allow requests from localhost:3001
-//app.use(cors({ origin: "https://schoolcool-client.vercel.app" }));
+app.use(cors({ origin: "https://schoolcool-client.vercel.app" }));
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 // Import routes
@@ -37,8 +37,9 @@ app.listen(port, () => {
 const mongoose = require("mongoose");
 
 // Connect to the MongoDB database
+//"mongodb+srv://rajanivucha:rajani.vucha%40123@cluster0.gkco9qo.mongodb.net/school-management",
 mongoose.connect(
-  "mongodb+srv://rajanivucha:rajani.vucha%40123@cluster0.gkco9qo.mongodb.net/school-management",
+  "mongodb+srv://vercel-admin-user:Ry7dqElaSfggQYWO@cluster0.gkco9qo.mongodb.net/school-management?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
